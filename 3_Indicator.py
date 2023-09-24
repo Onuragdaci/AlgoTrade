@@ -172,5 +172,3 @@ for i in range(1,len(Hisse)):
     Results= pd.DataFrame([L1],columns=Column_Names)
     BIST100_Hisseler.append(pd.DataFrame([L1],columns=Column_Names),ignore_index = True)
     print(Results)
-
-BIST100_Hisseler.to_csv('Algoritma.csv')

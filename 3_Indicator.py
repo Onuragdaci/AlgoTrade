@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 from tvDatafeed import TvDatafeed, Interval
 import warnings
 warnings.filterwarnings('ignore')
-
+tv = TvDatafeed()
 BIST100_Hisseler=pd.DataFrame()
 Column_Names=['Hisse Adı','Al-Sat Sayısı','Kazanma Oranı [%]','Toplam Kâr [%]','Ortalama Kazanma Oranı [%]']
 
@@ -127,7 +127,7 @@ def OTT(df,prt,prc):
     return df
 
 def Strategy(Hisse_Adı,Lenght_1,vf,prt,prc):
-    tv = TvDatafeed()
+    
     data = tv.get_hist(symbol=Hisse_Adı,exchange='BIST',interval=Interval.in_daily,n_bars=500)
     data.rename(columns = {'open':'Open', 'high':'High','low':'Low','close':'Close','volume':'Volume'}, inplace = True)
     #data = yf.download(Hisse_Adı+'.IS',start='2023-01-01',interval='1d',progress=False)

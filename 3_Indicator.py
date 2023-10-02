@@ -150,9 +150,9 @@ def Strategy(Hisse_Adı,Lenght_1,vf,prt,prc):
     data['Exit']=False
     for i in range(1,len(data['Entry'])-1):
         t3_prev = data['Tillson'][i-1]
-        t3_mid = data['Tillson'][i]
-        t3_fwd = data['Tillson'][i+1]
-        if t3_mid > t3_prev and t3_mid < t3_fwd:
+        t3_now = data['Tillson'][i]
+
+        if  t3_now < t3_prev:
             data['Exit'][i]=True
     return data
 
